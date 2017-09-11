@@ -1,0 +1,27 @@
+{
+  "name": "mhb_spider",
+  "version": "0.1.0",
+  "description": "a spider for fetch the price of MHB.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fetch": "node mhb_spider.js",
+    "server": "node server.js"
+  },
+  "keywords": [
+    "spider",
+    "MHB"
+  ],
+  "author": "maii",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "eslint": "^4.6.1",
+    "moment": "^2.18.1",
+    "mysql": "^2.14.1",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "superagent": "^3.6.0",
+    "superagent-charset": "^1.2.0"
+  }
+}
