@@ -4,19 +4,61 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title= obj[0].server_id
+        title= server_data[obj.server_id]
         link(rel="stylesheet", href="./css/common.css")
     body
         .left
             - each value,key in server_data
-                if(key == obj[0].server_id)
+                if(key == obj.server_id)
                     a.active(href="/#{key}") #{value}
                 else
                     a(href="/#{key}") #{value}
-        - for (var i=0;i<obj.length;i++)
-            div
-                span #{Number(obj[i].price*3000).toFixed(2)}
-                span= obj[i].time
-        //- include ./common/header
-        //- block content
-        //- include ./common/footer
+
+        #chart
+    script(src="https://cdn.bootcss.com/echarts/3.7.1/echarts.min.js")
+    script.
+        var data =  !{JSON.stringify(obj)};
+        console.log(data);
+        var myChart = echarts.init(document.getElementById('chart'));
+        option = {
+
+            // Make gradient line here
+            visualMap: {
+                show: false,
+                type: 'continuous',
+                seriesIndex: 0,
+                min: 150,
+                max: 800,
+                range: [150, 800]
+            },
+            title: {
+                left: 'center',
+                text: '价格走势'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            xAxis: {
+                data: data.time,
+                name: '时间'
+            },
+            yAxis: {
+                splitLine: {show: false},
+                name: '价格',
+                min: (value) => {
+                    return parseInt((value.min - 20)/10)*10
+                },
+                max: (value) =>{
+                    return parseInt((value.max + 20)/10)*10
+                }
+            },
+            grid: {
+                bottom: 20
+            },
+            series: {
+                type: 'line',
+                showSymbol: false,
+                data: data.price
+            }
+        };
+        myChart.setOption(option);

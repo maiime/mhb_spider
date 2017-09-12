@@ -10,8 +10,15 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     line-height: 36px;
-    color: #666;
+    color: #999;
+    text-decoration: none;
 }
 .left a.active{
     border: 1px solid green;
+    color: #000;
+}
+#chart{
+    float: left;
+    width: 1000px;
+    height: 500px;
 }
