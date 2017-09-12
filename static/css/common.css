@@ -1,0 +1,17 @@
+.left{
+    float: left;
+}
+.left a{
+    display: block;
+    margin: 5px 0;
+    text-align: center;
+    width: 120px;
+    height: 36px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    line-height: 36px;
+    color: #666;
+}
+.left a.active{
+    border: 1px solid green;
+}
