@@ -9,6 +9,10 @@ var cheerio = require('cheerio');
 var mysql = require('mysql');
 var mysql_config = require('./config/config');
 const moment = require('moment');
+// 定时任务
+var schedule = require('node-schedule');
+var rule = new schedule.RecurrenceRule();
+rule.hour = 20;
 
 class Spider {
 	/**
@@ -117,4 +121,6 @@ class Spider {
 }
  
 var mhb = new Spider();
-mhb.init();
+schedule.scheduleJob(rule, function(){
+    mhb.init();
+});

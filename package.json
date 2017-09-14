@@ -21,6 +21,7 @@
     "jade": "^1.11.0",
     "moment": "^2.18.1",
     "mysql": "^2.14.1",
+    "node-schedule": "^1.2.4",
     "request": "^2.81.0",
     "request-promise": "^4.2.1",
     "save": "^2.3.1",
