@@ -13,7 +13,7 @@ const moment = require('moment');
 var schedule = require('node-schedule');
 var rule = new schedule.RecurrenceRule();
 rule.hour = 20;
-
+rule.minute = 0;
 class Spider {
 	/**
 	 * 初始化
