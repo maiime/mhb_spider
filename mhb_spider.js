@@ -68,7 +68,7 @@ class Spider {
 			sql.connect();
 			sql.query(`INSERT INTO mhb_price (server_id,time,price) VALUES(${server_id},'${this.date}',${price})`,(err, res) => {
 				if(!err){
-					console.log('save_success!');
+					console.log(moment(new Date()).format('YYYY-MM-DD HH:mm')+':save_success!');
 					resolve();
 				}else{
 					reject(`写入数据库失败: ${err}`);
