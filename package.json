@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "fetch": "node mhb_spider.js",
+    "fetch": "node mhb_spider2.js",
     "server": "node server.js"
   },
   "keywords": [
@@ -15,17 +15,12 @@
   "author": "maii",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
     "eslint": "^4.6.1",
     "express": "^4.15.4",
     "jade": "^1.11.0",
     "moment": "^2.18.1",
-    "mysql": "^2.14.1",
-    "node-schedule": "^1.2.4",
-    "request": "^2.81.0",
-    "request-promise": "^4.2.1",
-    "save": "^2.3.1",
-    "superagent": "^3.6.0",
-    "superagent-charset": "^1.2.0"
+    "node-fetch": "^1.7.3",
+    "node-schedule": "^1.2.5",
+    "promise-mysql": "^3.1.3"
   }
 }
